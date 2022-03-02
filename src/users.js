@@ -1,14 +1,11 @@
 import React, {useEffect} from 'react';
 import {Text, View, StyleSheet, Button} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {useIsDrawerOpen} from '@react-navigation/drawer';
-import { useDrawerStatus } from '@react-navigation/drawer';
 
 const Users = () => {
   const navigation = useNavigation();
-  const route = useRoute();
-  const {id, codeName} = route.params;
-  const isDrawerOpen = useDrawerStatus();
+  // const route = useRoute();
+  // const {id, codeName} = route.params;
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,12 +17,11 @@ const Users = () => {
     }, 2000);
   }, [navigation]);
 
-  // alert(isDrawerOpen);
   return (
     <View style={styles.user}>
-      <Text>ID: {id}</Text>
-      <Text>CodeName: {codeName}</Text>
-      <Button
+      {/* <Text>ID: {id}</Text>
+      <Text>CodeName: {codeName}</Text> */}
+      {/* <Button
         title="Go Back"
         onPress={() =>
           navigation.navigate('Home', {
@@ -40,10 +36,15 @@ const Users = () => {
             title: 'something else',
           })
         }
+      /> */}
+      <Button
+        title="go to Users Settings"
+        onPress={() => navigation.navigate('Users_Settings')}
       />
-      <Button title="Toggle Drawer" onPress={() => navigation.toggleDrawer()} />
-      <Button title="Open Drawer" onPress={() => navigation.toggleDrawer()} />
-      <Button title="Close Drawer" onPress={() => navigation.closeDrawer()} />
+      <Button
+        title="go to Users Profile"
+        onPress={() => navigation.navigate('Users_Profile')}
+      />
     </View>
   );
 };

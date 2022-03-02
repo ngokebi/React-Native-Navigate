@@ -5,8 +5,8 @@ const Home = props => {
   // console.log(props);
   return (
     <View style={styles.home}>
-      <Text>Home Screen</Text>
-      <Text>{
+      {/* <Text>Home Screen</Text> */}
+      {/* <Text>{
         props.route.params ? 
         props.route.params.active:null}</Text>
       <Button
@@ -14,6 +14,14 @@ const Home = props => {
         onPress={() => props.navigation.navigate('Users',{
           id:23
         })}
+      /> */}
+      <Button
+        title="Go to Home Settings"
+        onPress={() => props.navigation.navigate('Home_Settings')}
+      />
+      <Button
+        title="Go to Home Posts"
+        onPress={() => props.navigation.navigate('Home_Posts')}
       />
     </View>
   );
@@ -24,7 +32,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    
   },
 });
 
